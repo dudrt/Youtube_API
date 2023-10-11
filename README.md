@@ -34,7 +34,7 @@ Este projeto necessita de algumas bibliotecas para funcionar, elas são:<br>
 - <a href="https://docs.python.org/pt-br/3/library/shutil.html">Shutil</a>
 
 Todas as bibliotecas citadas possuem documentação nos links disponibilizados.<br>
-É possivel que problemas ocorram com a biblioteca `Pytube`, principalmente se o projeto estiver sendo feito no Replit, caso isso aconteça, vá na seção <a href="hospedagem-da-api">Hospedagem da API</a>, lá vocÊ pode encontrar mais detalhes
+É possivel que problemas ocorram com a biblioteca `Pytube`, principalmente se o projeto estiver sendo feito no Replit, caso isso aconteça, vá na seção <a href="hospedagem-da-api">Hospedagem da API</a>, lá poderá ser encontrado mais detalhes.
 
 <h1>Remoção de audios baixados</h1>
 
