@@ -23,6 +23,7 @@ def delete_audio():
     
 delete_audio()
 
+
 @app.route('/')
 def index():
   return 'Olá, a API está funcionando!'
@@ -37,6 +38,7 @@ def pesq(parametros):
   response = a.json()
 
   videos = []
+  
   for i in range(10):
     # Extrair os campos desejados
     video_id = response["items"][i]["id"]["videoId"]
@@ -62,13 +64,11 @@ def download(id):
     url_baixar = url_completa.split("?")[1]
     yt = YouTube(f"{url_baixar}")
     stream = yt.streams.get_by_itag(id)
-    titulo = f"{stream.title}.mp3"
     titulo = stream.title[:10] + ".mp3"
-    titulo = "audio/" + titulo
     print(titulo)
-    stream.download(filename=titulo)
+    stream.download(output_path='audio', filename=titulo)
     
-    return send_file(titulo, mimetype='audio/mp3')
+    return send_file("audio/" + titulo, mimetype='audio/mp3')
   except Exception as e:
     print(e)
     return "Erro"
@@ -112,7 +112,7 @@ def download_medio():
     # Caso não exista a opção, baixa na menor qualidade.(100%)
     except:
       stream = yt.streams.get_by_itag(139)
-      
+    
     titulo = f"{stream.title}.mp3"
     titulo = stream.title[:10] + ".mp3"
     print(titulo)
