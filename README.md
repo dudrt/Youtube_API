@@ -20,11 +20,11 @@ A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit<
 - <a href="#download-qualidade-media">Download qualidade media.<a> <br>
 - <a href="#download-qualidade-baixa">Download qualidade baixa.<a> <br>
 
-<h2 id="deletar">Remoção de audios baixados</h2>
+<h1>Remoção de audios baixados</h1>
 
 Toda vez que a API é iniciada, a função `delete_audio()` é chamada para excluir a pasta que contém os arquivos de audio. Esta função é necessária para que não acabe o espaço disponível. Não é necessária a criação da pasta novamente, a mesma é recriada quando o primeiro arquivo for baixado.
 
-<h2 id="parametros">Parâmetros de pesquisa</h2>
+<h1>Parâmetros de pesquisa</h1>
 
 A função `buscar_parametros()` não é necessária para o download dos arquivos, mas é um sistema de pesquisa integrado na API. Esta função tem como objetivo mandar uma request para a API oficial do Youtube com o algo que o usuário deseja pesquisar, seja o nome do vídeo, canal, palavras chaves, etc. Logo após, ela faz o tratamento desses dados e devolve como resposta da requisição inicial, um JSON com informações dos 10 primeiros vídeos encontrados, contendo:<br> 
 
@@ -47,7 +47,7 @@ A segunda key vai na URL para a request, local que está escrito `key` coloque a
 #### Resposta:
 <img src="img/json_response.png"><br>
 
-<h2 id="get_id">Niveis de qualidade</h2>
+<h1>Niveis de qualidade</h1>
 
 A função `getids()` tem como objetivo retornar um JSON contendo:<br>
 - Qualidade do audio em kbps.<br>
@@ -62,7 +62,7 @@ Para Utilizar esta função, deve-se escrever a rota `/getids` após a URL princ
 
 <img src="img/id_response.png"><br>
 
-<h2 id="down_id">Download por ID</h2>
+<h1>Download por ID</h1>
 
 Esta funcionalidade necessita que você passe dois parametros,primeiramente você passa a rota `/down` e então em seguida vem os parametros, o primeiro é o ID da qualidade desejada que você encontra em <a href="#get_id">Niveis de qualidade</a> e o segundo é o link do vídeo que você deseja baixar.
 #### Exemplo de requisição e resposta
@@ -72,7 +72,7 @@ Esta funcionalidade necessita que você passe dois parametros,primeiramente voc�
 #### Resposta:
 - Arquivo MP3 que contém o audio do video escolhido.
 
-<h2 id="down_alto">Download qualidade alta</h2>
+<h1>Download qualidade alta</h1>
 
 Esta funcionalida serve para fazer o download com a maior qualidade disponivel, em alguns poucos videos, a qualidade mais alta, `128kbps`, não está disponivel, neste caso, o código mostra no console um aviso e tenta baixar na menor qualidade possivel,pois todos os videos possuem esta opção de download.<br>
 Basta colocar a URL principal, a rota `/downalto` seguido de `?` e então o link completo do vídeo.
@@ -83,7 +83,7 @@ Basta colocar a URL principal, a rota `/downalto` seguido de `?` e então o link
 #### Resposta:
 - Arquivo MP3 que contém o audio do video escolhido.
 
-<h2 id="down_medio">Download qualidade media</h2>
+<h1>Download qualidade media</h1>
 
 Esta funcionalida serve para fazer o download com a qualidade média, em alguns poucos videos, a qualidade média, `70kbps`, não está disponivel, neste caso, o código mostra no console um aviso e tenta baixar na menor qualidade possivel,pois todos os videos possuem esta opção de download.<br>
 Basta colocar a URL principal, a rota `/downmedio` seguido de `?` e então o link completo do vídeo.
@@ -94,7 +94,7 @@ Basta colocar a URL principal, a rota `/downmedio` seguido de `?` e então o lin
 #### Resposta:
 - Arquivo MP3 que contém o audio do video escolhido.
 
-<h2 id="down_baixo">Download qualidade baixa</h2>
+<h1">Download qualidade baixa</h1>
 
 Esta funcionalida serve para você fazer o download com a menor qualidade disponivel `48kbps`, 
 Basta colocar a URL principal, a rota `/downbaixo` seguido de `?` e então o link completo do vídeo.
