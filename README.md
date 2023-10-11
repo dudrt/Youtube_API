@@ -20,6 +20,7 @@ A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit<
 - <a href="#down_baixo">Download qualidade baixa.<a> <br>
 
 <h2 id="deletar">Remoção de audios baixados</h2>
+
 Toda vez que a API é iniciada, a função `delete_audio()` é chamada para excluir a pasta que contém os arquivos de audio. Esta função é necessária para que não acabe o espaço disponível.
 
 <h2 id="parametros">Parâmetros de pesquisa</h2>
@@ -31,5 +32,17 @@ A função `buscar_parametros()` não é necessária para o download dos arquivo
 - Titulo do Vídeo.<br>
 - ID do vídeo.<br>
 
-Duvidas podem ser geradas quanto a definição de "ID do vídeo", esta informação é a sequência de caracteres que correspondem ao vídeo e que ficam localizadas no final de toda URL de vídeos, após a rota `/watch` seguido de `?v=` e então o ID, exemplo:
-https://www.youtube.com/watch?v= `4-43lLKaqBQ`
+Duvidas podem ser geradas quanto a definição de "ID do vídeo", esta informação é a sequência de caracteres que correspondem ao vídeo e que ficam localizadas no final de toda URL de vídeos, após a rota `/watch` seguido de `?v=` e então o ID, exemplo:<br>
+- https://www.youtube.com/watch?v= `4-43lLKaqBQ`<br>
+
+Para a utilização desta função, é necessário o cadastro no site da <a href="https://developers.google.com/youtube/v3?hl=pt-br">API do Youtube</a> duas keys são necessárias, a primeira vai nas configurações da API, onde está escrito `developer_key` coloque sua developer key.<br>
+<img src="img/developer_key.png"><br>
+A segunda key vai na URL para a request, local que está escrito `key` coloque a sua request key.<br>
+<img src="img/url_key.png"><br>
+#### Exemplo de requisição e resposta
+#### Requisição: 
+- https://apiyoutube.eduardoroth1.repl.co/old town road <br>
+
+#### Resposta:
+<img src="img/json_response.png"><br>
+
