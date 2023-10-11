@@ -47,8 +47,8 @@ def buscar_parametros(parametros):
     title = response["items"][i]["snippet"]["title"]
 
     item ={"Thumbnail":thumbnail,
-               "Channel":channel_title,
-               "Title":title,
+               "Canal":channel_title,
+               "Titulo":title,
                "VideoId":video_id}
 
     videos.append(item)
