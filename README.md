@@ -6,8 +6,9 @@ Esta API tem como objetivo a fácil integração em aplicativos e sites, possuin
 `https://apiyoutube.eduardoroth1.repl.co` <br>
 - Suas funcionalidades estarão listadas a baixo.
 # Explicações iniciais
-O objetivo desta API é ser uma aplicação simples e de fácil integração em diferentes cenários. Tem também como objetivo a fácil manutenção e modificação de acordo com as necessidades.<br>
-A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit</a>, caso você deseje hospedar tua própria API no Replit, esteja ciente de que encontrará algumas dificuldades, veja a seção <a href="#hospedar">Hospedagem da API</a>. A hospedagem da mesma é possivel em diferentes sites, não se esqueça de fazer as modificações necessárias.
+A API disponibilizada a cima está livre para o uso, porém a única função que possui bloqueio para terceiros é a <a href="#parametros">Parâmetros de pesquisa.<a> por motivos que a API oficial do Youtube possui limite diário de 100 requests.<br><br>
+O objetivo desta API é ser uma aplicação simples e de fácil integração em diferentes cenários. Tem também como objetivo a fácil manutenção e modificação de acordo com as necessidades.<br><br>
+A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit</a>, caso você deseje hospedar sua própria API no Replit, esteja ciente de que encontrará algumas dificuldades, veja a seção <a href="#hospedar">Hospedagem da API</a>. A hospedagem da mesma é possivel em diferentes sites, não se esqueça de fazer as modificações necessárias.<br>
 
 # Funcionalidades
 #### Os tópicos abordados serão:
@@ -16,7 +17,7 @@ A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit<
 - <a href="#get_id">Niveis de qualidade.<a> <br>
 - <a href="#down_id">Download por ID.<a> <br>
 - <a href="#down_alto">Download qualidade alta.<a> <br>
-- <a href="#down_meio">Download qualidade media.<a> <br>
+- <a href="#down_medio">Download qualidade media.<a> <br>
 - <a href="#down_baixo">Download qualidade baixa.<a> <br>
 
 <h2 id="deletar">Remoção de audios baixados</h2>
@@ -41,9 +42,65 @@ A segunda key vai na URL para a request, local que está escrito `key` coloque a
 <img src="img/url_key.png"><br>
 #### Exemplo de requisição e resposta
 #### Requisição: 
-- https://apiyoutube.eduardoroth1.repl.co/old town road <br>
+- https://sua_url_aqui/old town road <br>
 
 #### Resposta:
 <img src="img/json_response.png"><br>
 
 <h2 id="get_id">Niveis de qualidade</h2>
+
+A função `getids()` tem como objetivo retornar um JSON contendo:<br>
+- Qualidade do audio em kbps.<br>
+- ID.<br>
+A informação `ID` deve ser utilizada na próxima função. Audios com qualidades mais altas necessitam de um maior tempo para o download e envio.<br>
+Para Utilizar esta função, deve-se escrever a rota `/getids` após a URL principal e então adicionar `?` no final para que o código conseguida fazer o tratamento dos dados, após isso deve ser passado o link inteiro do vídeo desejado, note que é possível fazer modificações básicas para que o código aceite apenas o `ID do vídeo`:<br>
+#### Exemplo de requisição e resposta
+#### Requisição
+- https://sua_url_aqui/getids?https://www.youtube.com/watch?v=SlnrCLivyjM<br>
+
+#### Resposta
+
+<img src="img/id_response.png"><br>
+
+<h2 id="down_id">Download por ID</h2>
+
+Esta funcionalidade necessita que você passe dois parametros,primeiramente você passa a rota `/down` e então em seguida vem os parametros, o primeiro é o ID da qualidade desejada que você encontra em <a href="#get_id">Niveis de qualidade</a> e o segundo é o link do vídeo que você deseja baixar.
+#### Exemplo de requisição e resposta
+#### Requisição: 
+- https://sua_url_aqui/down/250?https://www.youtube.com/watch?v=-59jGD4WrmE
+
+#### Resposta:
+- Arquivo MP3 que contém o audio do video escolhido.
+
+<h2 id="down_alto">Download qualidade alta</h2>
+
+Esta funcionalida serve para fazer o download com a maior qualidade disponivel, em alguns poucos videos, a qualidade mais alta, `128kbps`, não está disponivel, neste caso, o código mostra no console um aviso e tenta baixar na menor qualidade possivel,pois todos os videos possuem esta opção de download.<br>
+Basta colocar a URL principal, a rota `/downalto` seguido de `?` e então o link completo do vídeo.
+#### Exemplo de requisição e resposta
+#### Requisição: 
+- https://sua_url_aqui/downalto?https://www.youtube.com/watch?v=vtNJMAyeP0s
+
+#### Resposta:
+- Arquivo MP3 que contém o audio do video escolhido.
+
+<h2 id="down_medio">Download qualidade media</h2>
+
+Esta funcionalida serve para fazer o download com a qualidade média, em alguns poucos videos, a qualidade média, `70kbps`, não está disponivel, neste caso, o código mostra no console um aviso e tenta baixar na menor qualidade possivel,pois todos os videos possuem esta opção de download.<br>
+Basta colocar a URL principal, a rota `/downmedio` seguido de `?` e então o link completo do vídeo.
+#### Exemplo de requisição e resposta
+#### Requisição: 
+- https://sua_url_aqui/downmedio?https://www.youtube.com/watch?v=vtNJMAyeP0s
+
+#### Resposta:
+- Arquivo MP3 que contém o audio do video escolhido.
+
+<h2 id="down_baixo">Download qualidade baixa</h2>
+
+Esta funcionalida serve para você fazer o download com a menor qualidade disponivel `48kbps`, 
+Basta colocar a URL principal, a rota `/downbaixo` seguido de `?` e então o link completo do vídeo.
+#### Exemplo de requisição e resposta
+#### Requisição: 
+- https://sua_url_aqui/downbaixo?https://www.youtube.com/watch?v=vtNJMAyeP0s
+
+#### Resposta:
+- Arquivo MP3 que contém o audio do video escolhido.
