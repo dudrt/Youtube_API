@@ -21,7 +21,7 @@ A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit<
 - <a href="#download-qualidade-alta">Download qualidade alta.<a> <br>
 - <a href="#download-qualidade-media">Download qualidade media.<a> <br>
 - <a href="#download-qualidade-baixa">Download qualidade baixa.<a> <br>
-- <a href="#hospedagem-da-api">Hospedagem da API</a
+- <a href="#hospedagem-da-api">Hospedagem da API</a>
                                                   
 <h1>Instalação das ferramentas</h1
                                 
