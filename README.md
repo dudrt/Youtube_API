@@ -64,7 +64,7 @@ Para Utilizar esta função, deve-se escrever a rota `/getids` após a URL princ
 
 <h1>Download por ID</h1>
 
-Esta funcionalidade necessita que você passe dois parametros,primeiramente você passa a rota `/down` e então em seguida vem os parametros, o primeiro é o ID da qualidade desejada que você encontra em <a href="#get_id">Niveis de qualidade</a> e o segundo é o link do vídeo que você deseja baixar.
+Esta funcionalidade necessita que você passe dois parametros,primeiramente você passa a rota `/down` e então em seguida vem os parametros, o primeiro é o ID da qualidade desejada que você encontra em <a href="#niveis-de-qualidade">Niveis de qualidade</a> e o segundo é o link do vídeo que você deseja baixar.
 #### Exemplo de requisição e resposta
 #### Requisição: 
 - https://sua_url_aqui/down/250?https://www.youtube.com/watch?v=-59jGD4WrmE
