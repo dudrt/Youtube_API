@@ -12,7 +12,7 @@ A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit<
 
 # Funcionalidades
 #### Os tópicos abordados serão:
-- <a href="#deletar">Remoção de audios baixados.<a> <br>
+- <a href="#remoção-de-audios-baixados">Remoção de audios baixados.<a> <br>
 - <a href="#parametros">Parâmetros de pesquisa.<a> <br>
 - <a href="#get_id">Niveis de qualidade.<a> <br>
 - <a href="#down_id">Download por ID.<a> <br>
