@@ -56,6 +56,32 @@ def pesq(parametros):
   json_str = json.dumps({"videos":videos}, indent=2)
   return json_str
 
+@app.route('/getids')
+def getids():
+  try:
+    url_completa = request.url
+    url_baixar = url_completa.split("?")
+    yt = YouTube(f"{url_baixar[1]}")
+    retornar = str(yt.streams.filter(only_audio=True))
+    apoio = retornar.split(",")
+    videos =[]
+    for i in range(len(apoio) - 1):
+      separar = apoio[i].split("Stream:")[1]
+      id = separar.split("=")[1].split(" ")[0].split('"')[1]
+      qualidade = separar.split("=")[3].split(" ")[0].split('"')[1]
+      
+      item ={"ID":id,
+            "Qualidade":qualidade}
+    
+      videos.append(item)
+  
+    json_str = json.dumps({"IDs":videos}, indent=2)
+  
+    return json_str
+  except Exception as e:
+    print(e)
+    return "Erro"
+
 
 @app.route('/down/<id>')
 def download(id):
@@ -144,31 +170,6 @@ def download_baixo():
     print(e)
     return "Erro"
 
-@app.route('/getids')
-def getids():
-  try:
-    url_completa = request.url
-    url_baixar = url_completa.split("?")
-    yt = YouTube(f"{url_baixar[1]}")
-    retornar = str(yt.streams.filter(only_audio=True))
-    apoio = retornar.split(",")
-    videos =[]
-    for i in range(len(apoio) - 1):
-      separar = apoio[i].split("Stream:")[1]
-      id = separar.split("=")[1].split(" ")[0].split('"')[1]
-      qualidade = separar.split("=")[3].split(" ")[0].split('"')[1]
-      
-      item ={"ID":id,
-            "Qualidade":qualidade}
-    
-      videos.append(item)
-  
-    json_str = json.dumps({"IDs":videos}, indent=2)
-  
-    return json_str
-  except Exception as e:
-    print(e)
-    return "Erro"
 
 @app.route('/teste')
 def teste():
