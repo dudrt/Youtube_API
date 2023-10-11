@@ -6,12 +6,14 @@ Esta API tem como objetivo a fácil integração em aplicativos e sites, possuin
 `https://apiyoutube.eduardoroth1.repl.co` <br>
 - Suas funcionalidades estarão listadas a baixo.
 # Explicações iniciais
+Até o presente momento (11/10/2023), a API está funcionando, ela pode apresentar erros devido a futuras atualizações da biblioteca utilizada.<br>
 A API disponibilizada a cima está livre para o uso, porém a única função que possui bloqueio para terceiros é a <a href="#parâmetros-de-pesquisa">Parâmetros de pesquisa.<a> por motivos que a API oficial do Youtube possui limite diário de 100 requests.<br><br>
 O objetivo desta API é ser uma aplicação simples e de fácil integração em diferentes cenários. Tem também como objetivo a fácil manutenção e modificação de acordo com as necessidades.<br><br>
 A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit</a>, caso você deseje hospedar sua própria API no Replit, esteja ciente de que encontrará algumas dificuldades, veja a seção <a href="#hospedagem-da-api">Hospedagem da API</a>. A hospedagem da mesma é possivel em diferentes sites, não se esqueça de fazer as modificações necessárias.<br>
 
 # Funcionalidades
 #### Os tópicos abordados serão:
+- <a href="#instalação-das-ferramentas">Instalação das ferramentas</a>
 - <a href="#remoção-de-audios-baixados">Remoção de audios baixados.<a> <br>
 - <a href="#parâmetros-de-pesquisa">Parâmetros de pesquisa.<a> <br>
 - <a href="#niveis-de-qualidade">Niveis de qualidade.<a> <br>
@@ -19,6 +21,20 @@ A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit<
 - <a href="#download-qualidade-alta">Download qualidade alta.<a> <br>
 - <a href="#download-qualidade-media">Download qualidade media.<a> <br>
 - <a href="#download-qualidade-baixa">Download qualidade baixa.<a> <br>
+- <a href="#hospedagem-da-api">Hospedagem da API</a
+                                                  
+<h1>Instalação das ferramentas</h1
+                                
+Este projeto necessita de algumas bibliotecas para funcionar, elas são:<br>
+- <a href="https://flask.palletsprojects.com/en/3.0.x/">Flask</a><br>
+- <a href="https://pytube.io/en/latest/">Pytube</a>
+- <a href="https://pypi.org/project/requests/">Request</a>
+- <a href="https://docs.python.org/3/library/json.html">JSON</a>
+- <a href="https://docs.python.org/3/library/os.html">OS</a>
+- <a href="https://docs.python.org/pt-br/3/library/shutil.html">Shutil</a>
+
+Todas as bibliotecas citadas possuem documentação nos links disponibilizados.<br>
+É possivel que problemas ocorram com a biblioteca `Pytube`, principalmente se o projeto estiver sendo feito no Replit, caso isso aconteça, vá na seção <a href="hospedagem-da-api">Hospedagem da API</a>, lá vocÊ pode encontrar mais detalhes
 
 <h1>Remoção de audios baixados</h1>
 
@@ -94,7 +110,7 @@ Basta colocar a URL principal, a rota `/downmedio` seguido de `?` e então o lin
 #### Resposta:
 - Arquivo MP3 que contém o audio do video escolhido.
 
-<h1">Download qualidade baixa</h1>
+<h1>Download qualidade baixa</h1>
 
 Esta funcionalida serve para você fazer o download com a menor qualidade disponivel `48kbps`, 
 Basta colocar a URL principal, a rota `/downbaixo` seguido de `?` e então o link completo do vídeo.
@@ -104,3 +120,18 @@ Basta colocar a URL principal, a rota `/downbaixo` seguido de `?` e então o lin
 
 #### Resposta:
 - Arquivo MP3 que contém o audio do video escolhido.
+
+<h1>Hospedagem da API</h1>
+
+A biblioteca `Pytube` foi feita para fazer o download de vídeos do Youtube, porém devido a constantes atualizações de código do Youtube esta prática acaba ficando mais dificil, então é possivel que ao fazer o download padrão da biblioteca não funcione, segue a baixo uma maneira de tentar solucionar o problema.<br>
+
+<img src="img/pytube.png"><br><br>
+
+#### Replit
+
+Caso o projeto esteja sendo feito no Replit, é recomendado que seja começado com o template `Flask`, pois ele já possui as configurações iniciais necessárias para o acesso da API remotamente por toda a internet.<br>
+Logo após, faça o passo a cima caso não funcione o download padrão e então vá em `Files` e clique em `Show hidden files`, irá aparecer novos arquivos antes escondidos.<br>
+Encontre o arquivo `replit.nix` e modifique o `deps` como está na imagem a baixo.<br>
+
+<img src="img/replit.png">
+
