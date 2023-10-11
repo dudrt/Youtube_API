@@ -30,7 +30,7 @@ def index():
 
 
 @app.route('/<parametros>')
-def pesq(parametros):
+def buscar_parametros(parametros):
   url = f'https://www.googleapis.com/youtube/v3/search?q={parametros}&part=snippet&key={key}&type=video&maxResults=10'
 
   # Fazer a solicitação GET
