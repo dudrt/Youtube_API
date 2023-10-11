@@ -6,19 +6,19 @@ Esta API tem como objetivo a fácil integração em aplicativos e sites, possuin
 `https://apiyoutube.eduardoroth1.repl.co` <br>
 - Suas funcionalidades estarão listadas a baixo.
 # Explicações iniciais
-A API disponibilizada a cima está livre para o uso, porém a única função que possui bloqueio para terceiros é a <a href="#parametros">Parâmetros de pesquisa.<a> por motivos que a API oficial do Youtube possui limite diário de 100 requests.<br><br>
+A API disponibilizada a cima está livre para o uso, porém a única função que possui bloqueio para terceiros é a <a href="#parâmetros-de-pesquisa">Parâmetros de pesquisa.<a> por motivos que a API oficial do Youtube possui limite diário de 100 requests.<br><br>
 O objetivo desta API é ser uma aplicação simples e de fácil integração em diferentes cenários. Tem também como objetivo a fácil manutenção e modificação de acordo com as necessidades.<br><br>
-A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit</a>, caso você deseje hospedar sua própria API no Replit, esteja ciente de que encontrará algumas dificuldades, veja a seção <a href="#hospedar">Hospedagem da API</a>. A hospedagem da mesma é possivel em diferentes sites, não se esqueça de fazer as modificações necessárias.<br>
+A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit</a>, caso você deseje hospedar sua própria API no Replit, esteja ciente de que encontrará algumas dificuldades, veja a seção <a href="#hospedagem-da-api">Hospedagem da API</a>. A hospedagem da mesma é possivel em diferentes sites, não se esqueça de fazer as modificações necessárias.<br>
 
 # Funcionalidades
 #### Os tópicos abordados serão:
 - <a href="#remoção-de-audios-baixados">Remoção de audios baixados.<a> <br>
-- <a href="#parametros">Parâmetros de pesquisa.<a> <br>
-- <a href="#get_id">Niveis de qualidade.<a> <br>
-- <a href="#down_id">Download por ID.<a> <br>
-- <a href="#down_alto">Download qualidade alta.<a> <br>
-- <a href="#down_medio">Download qualidade media.<a> <br>
-- <a href="#down_baixo">Download qualidade baixa.<a> <br>
+- <a href="#parâmetros-de-pesquisa">Parâmetros de pesquisa.<a> <br>
+- <a href="#niveis-de-qualidade">Niveis de qualidade.<a> <br>
+- <a href="#download-por-id">Download por ID.<a> <br>
+- <a href="#download-qualidade-alta">Download qualidade alta.<a> <br>
+- <a href="#download-qualidade-media">Download qualidade media.<a> <br>
+- <a href="#download-qualidade-baixa">Download qualidade baixa.<a> <br>
 
 <h2 id="deletar">Remoção de audios baixados</h2>
 
