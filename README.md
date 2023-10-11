@@ -21,7 +21,7 @@ A ideia principal é a hospedagem da API no <a href="https://replit.com">Replit<
 
 <h2 id="deletar">Remoção de audios baixados</h2>
 
-Toda vez que a API é iniciada, a função `delete_audio()` é chamada para excluir a pasta que contém os arquivos de audio. Esta função é necessária para que não acabe o espaço disponível.
+Toda vez que a API é iniciada, a função `delete_audio()` é chamada para excluir a pasta que contém os arquivos de audio. Esta função é necessária para que não acabe o espaço disponível. Não é necessária a criação da pasta novamente, a mesma é recriada quando o primeiro arquivo for baixado.
 
 <h2 id="parametros">Parâmetros de pesquisa</h2>
 
@@ -46,3 +46,4 @@ A segunda key vai na URL para a request, local que está escrito `key` coloque a
 #### Resposta:
 <img src="img/json_response.png"><br>
 
+<h2 id="get_id">Niveis de qualidade</h2>
