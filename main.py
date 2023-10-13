@@ -54,6 +54,7 @@ def buscar_parametros(parametros):
     videos.append(item)
 
   json_str = json.dumps({"videos":videos}, indent=2)
+  print("Sucesso!")
   return json_str
 
 @app.route('/getids')
@@ -76,7 +77,8 @@ def getids():
       videos.append(item)
   
     json_str = json.dumps({"IDs":videos}, indent=2)
-  
+    
+    print("Sucesso!")
     return json_str
   except Exception as e:
     print(e)
@@ -91,9 +93,8 @@ def download(id):
     yt = YouTube(f"{url_baixar}")
     stream = yt.streams.get_by_itag(id)
     titulo = stream.title[:10] + ".mp3"
-    print(titulo)
     stream.download(output_path='audio', filename=titulo)
-    
+    print("Sucesso!")
     return send_file("audio/" + titulo, mimetype='audio/mp3')
   except Exception as e:
     print(e)
@@ -104,21 +105,20 @@ def download_alto():
   try:
     url_completa = request.url
     url_baixar = url_completa.split("?")[1]
-    print(url_completa)
     yt = YouTube(f"{url_baixar}")
     # Tenta baixar o audio na qualidade desejada.
     try:
       stream = yt.streams.get_by_itag(140)
     # Caso não exista a opção, baixa na menor qualidade.(100%)
     except:
+      print("Não foi possivel baixar na qualidade desajada! /nTentando baixar em outra qualidade!")
       stream = yt.streams.get_by_itag(139)
   
     titulo = f"{stream.title}.mp3"
     titulo = stream.title[:10] + ".mp3"
-    print(titulo)
   
     stream.download(output_path='audio', filename=titulo)
-    
+    print("Sucesso!")
     return send_file("audio/" + titulo, mimetype='audio/mp3')
     
   except Exception as e:
@@ -130,21 +130,21 @@ def download_medio():
   try:
     url_completa = request.url
     url_baixar = url_completa.split("?")[1]
-    print(url_completa)
     yt = YouTube(f"{url_baixar}")
     # Tenta baixar o audio na qualidade desejada.
     try:
       stream = yt.streams.get_by_itag(250)
     # Caso não exista a opção, baixa na menor qualidade.(100%)
     except:
+      print("Não foi possivel baixar na qualidade desajada! /nTentando baixar em outra qualidade!")
       stream = yt.streams.get_by_itag(139)
     
     titulo = f"{stream.title}.mp3"
     titulo = stream.title[:10] + ".mp3"
-    print(titulo)
   
     stream.download(output_path='audio', filename=titulo)
     
+    print("Sucesso!")
     return send_file("audio/" + titulo, mimetype='audio/mp3')
     
   except Exception as e:
@@ -156,12 +156,10 @@ def download_baixo():
   try:  
     url_completa = request.url
     url_baixar = url_completa.split("?")[1]
-    print(url_completa)
     yt = YouTube(f"{url_baixar}")
     stream = yt.streams.get_by_itag(139)
     titulo = f"{stream.title}.mp3"
     titulo = stream.title[:10] + ".mp3"
-    print(titulo)
 
     stream.download(output_path='audio', filename=titulo)
   
@@ -169,14 +167,6 @@ def download_baixo():
   except Exception as e:
     print(e)
     return "Erro"
-
-
-@app.route('/teste')
-def teste():
-  yt = YouTube("www.youtube.com/watch?v=69sw2G79Tb8")
-  retornar = str(yt.streams.filter(progressive=True))
-
-  return retornar
 
 
 app.run(host='0.0.0.0', port=81)
