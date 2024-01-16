@@ -5,6 +5,10 @@ Esta API tem como objetivo a fácil integração em aplicativos e sites, possuin
 ##### If you are looking for an API ready for use in your own projects that do not require speed of response, feel free to use my.
 `https://apiyoutube.eduardoroth1.repl.co` <br>
 - Suas funcionalidades estarão listadas a baixo.
+
+# NÃO ESTÁ MAIS FUNCIONANDO!
+A API estava hospedada no RepliIt ,porém a partir do dia 1/1/2024 ela parou de aceitar hospedagem de Bots e APIs, estou procurando outro local para hospeda-la, porém sem data definida de voltar.
+
 # Explicações iniciais
 Até o presente momento (11/10/2023), a API está funcionando, ela pode apresentar erros devido a futuras atualizações da biblioteca utilizada.<br>
 A API disponibilizada a cima está livre para o uso, porém a única função que possui bloqueio para terceiros é a <a href="#parâmetros-de-pesquisa">Parâmetros de pesquisa.<a> por motivos que a API oficial do Youtube possui limite diário de 100 requests.<br><br>
